@@ -12,14 +12,14 @@ export default function DataProvider({ children }) {
     const [totalData, setTotalData] = useState();
     const [loading, setLoading] = useState(false);
     const [errorPage, setErrorPage] = useState(false)
-    const fetcher = (url) => fetch(url).then((res) => res.json());
+    // const fetcher = (url) => fetch(url).then((res) => res.json());
     const getData = (url) => {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             xhr.open('GET', url, true);
             xhr.onload = function () {
                 if (this.status === 200) {
-                    resolve(JSON.parse(this.responseText));
+                    resolve(JSON.parse(JSON.parse(this.responseText)));
                 } else {
                     reject(new Error(`Failed to load data: ${this.status}`));
                 }
@@ -30,10 +30,11 @@ export default function DataProvider({ children }) {
             xhr.send();
         });
     };
+
     const { data, error } = useSWR('/api/staticdata', getData);
     if (error) return <div>Failed to load</div>;
     if (!data) return <div>Loading...</div>;
-    if (data) console.log(data?.length)
+    if (data) console.log(data)
 
     const value = {
         data
