@@ -8,10 +8,7 @@ export function useData() {
     return useContext(DataContext)
 }
 export default function DataProvider({ children }) {
-    const Router = useRouter();
-    const [totalData, setTotalData] = useState();
-    const [loading, setLoading] = useState(false);
-    const [errorPage, setErrorPage] = useState(false)
+    const router = useRouter();
     // const fetcher = (url) => fetch(url).then((res) => res.json());
     const getData = (url) => {
         return new Promise((resolve, reject) => {
@@ -32,16 +29,16 @@ export default function DataProvider({ children }) {
     };
 
     const { data, error } = useSWR('/api/staticdata', getData);
-    if (error) return <div>Failed to load</div>;
-    if (!data) return <div>Loading...</div>;
-    if (data) console.log(data)
+    if (error) return <div className='problem'>Oops, something went wrong...</div>;
+    if (!data) return <div className='problem'>Loading...</div>;
+    // if (data) console.log(data)
 
     const value = {
         data
     }
     return (
         <DataContext.Provider value={value}>
-            {children}
+            {!error && data && children}
         </DataContext.Provider>
     )
 }

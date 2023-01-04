@@ -6,23 +6,18 @@ import Instagram from '../public/instagram-white.svg';
 import Playstore from '../public/store/play-store.svg';
 import Windowstore from '../public/store/windows-store.svg';
 import Appstore from '../public/store/app-store.svg';
-export default function Footer() {
+export default function Footer({ position }) {
     return (
         <div className='footer'>
             <div className='highlights'>
-                <p>Home</p>
-                <p>|</p>
-                <p>Terms and Conditions</p>
-                <p>|</p>
-                <p>Privacy Policy</p>
-                <p>|</p>
-                <p>Collection Statement</p>
-                <p>|</p>
-                <p>Help</p>
-                <p>|</p>
+                <p>Home <span className='line'>|</span></p>
+                <p>Terms and Conditions<span className='line'>|</span></p>
+                <p>Privacy Policy<span className='line'>|</span></p>
+                <p>Collection Statement<span className='line'>|</span></p>
+                <p>Help<span className='line'>|</span></p>
                 <p>Manage Account</p>
             </div>
-            <div className='copyrights'>copyright[&#169;]2016 DEMOcStreaming. All Rights Reserved</div>
+            <div className='copyrights'>copyright &#169; 2016  DEMO  Streaming . All  Rights  Reserved</div>
             <div className='logos'>
                 <div className='sociamedia-logos'>
                     <Image className='logo-imgs' src={Facebook} alt='facebook-logo'></Image>
