@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import OnErrorImg from '../public/placeholder.png'
+import OnErrorImg from '../../public/placeholder.png'
 
 export default function CardTile({ src, index, title, description }) {
     return (

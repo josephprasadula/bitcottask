@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import Facebook from '../public/facebook-white.svg';
-import Twitter from '../public/twitter-white.svg';
-import Instagram from '../public/instagram-white.svg';
-import Playstore from '../public/store/play-store.svg';
-import Windowstore from '../public/store/windows-store.svg';
-import Appstore from '../public/store/app-store.svg';
+import Facebook from '../../public/facebook-white.svg';
+import Twitter from '../../public/twitter-white.svg';
+import Instagram from '../../public/instagram-white.svg';
+import Playstore from '../../public/store/play-store.svg';
+import Windowstore from '../../public/store/windows-store.svg';
+import Appstore from '../../public/store/app-store.svg';
 export default function Footer({ position }) {
     return (
         <div className='footer'>

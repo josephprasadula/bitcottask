@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['streamcoimg-a.akamaihd.net'],
+    // domains: ['streamcoimg-a.akamaihd.net'],
     remotePatterns: [{
       protocol: 'https',
       hostname: 'streamcoimg-a.akamaihd.net',

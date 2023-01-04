@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
-import CardGrid from '../components/cardGrid'
+import Header from '../src/components/header'
+import Footer from '../src/components/footer'
+import CardGrid from '../src/components/cardGrid'
 import { useData } from '../context/context'
 export default function Movies() {
     const { data } = useData();
