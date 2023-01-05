@@ -8,8 +8,13 @@ const nextConfig = {
       hostname: 'streamcoimg-a.akamaihd.net',
       port: '',
       pathname: '/000/**',
-    }]
-  }
+    }],
+    unoptimized: true,
+  },
+  distDir: 'dist',
+  exportPathMap: () => ({
+    '/': { page: '/index' },
+  }),
 }
 
 module.exports = nextConfig
