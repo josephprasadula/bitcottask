@@ -23,10 +23,21 @@ export default function Movies() {
         }
 
     }, [data])
+    function compare(a, b) {
+        if (a?.title < b?.title) {
+            return -1;
+        }
+        if (a?.title > b?.title) {
+            return 1;
+        }
+        return 0;
+    }
+
+    // console.log('movies in alphabetical order', movieData?.slice(0, 21)?.sort(compare), movieData?.slice(0, 21))
     return (
         <>
             <Header item={'Movies'} />
-            {isLoading ? <div className='problem'>Loading...</div> : isError ? <div className='problem'>Oops, something went wrong...</div> : <div className='body'><CardGrid data={movieData?.slice(0, 21)} /></div>}
+            {isLoading ? <div className='problem'>Loading...</div> : isError ? <div className='problem'>Oops, something went wrong...</div> : <div className='body'><CardGrid data={movieData?.slice(0, 21)?.sort(compare)} /></div>}
             { }
             <Footer />
         </>
